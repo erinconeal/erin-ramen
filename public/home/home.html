@@ -1,0 +1,27 @@
+<header-dir></header-dir>
+
+<!-- <div class="home-pic-container">
+  <img class="background" src="images/superthumb.jpg" alt="" />
+  <img class="home-pic" src="images/img_menu_other03.png" alt="" />
+</div> -->
+
+
+  <div class="main-body">
+    <br>
+    <h1>Menu</h1>
+    <div class="food-menu" ng-repeat="item in food">
+      {{item.category}}
+    <h2>{{item.food_name}}</h2>
+    <img class="menu-img" ng-src="{{item.image}}" alt="" />
+    <br>
+    <h6>{{item.description}}</h6>
+    <h6>{{item.price}}</h6>
+    <br>
+    </div>
+  </div>
+
+
+
+
+
+<footer-dir class="footer-bottom"></footer-dir>

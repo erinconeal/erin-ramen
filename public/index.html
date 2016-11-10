@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Erin's Ramen</title>
+    <link rel="stylesheet" href="styles/styles.css"></link>
+    <link rel="stylesheet" href="styles/reset.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Bungee+Shade|Carter+One" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <ui-view></ui-view>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <script src="service.js"></script>
+    <script src="adminSrv.js"></script>
+    <script src="userService.js"></script>
+
+    <script src="admin/adminCtrl.js"></script>
+    <script src="admin/login/loginCtrl.js"></script>
+    <script src="admin/orders_sum/admin_ordersCtrl.js"></script>
+    <script src="admin/update_menu/admin_update_menuCtrl.js"></script>
+    <script src="admin/update_menu/editMenuCtrl.js"></script>
+    <script src="contact/contactCtrl.js"></script>
+    <script src="footer/footerDir.js"></script>
+    <script src="header/headerDir.js"></script>
+    <script src="home/homeCtrl.js"></script>
+    <script src="order/orderCtrl.js"></script>
+    <script src="order/delivery/deliveryCtrl.js"></script>
+    <script src="order/pickup/pickupCtrl.js"></script>
+    <script src="order/submitted/submitCtrl.js"></script>
+
+  </body>
+</html>

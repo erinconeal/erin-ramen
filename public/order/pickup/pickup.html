@@ -1,0 +1,63 @@
+<header-dir></header-dir>
+
+
+  <div class="pickup-body">
+    <h1>Select items you want to pickup</h1>
+
+    <div class="food-menu" ng-repeat="item in food">
+      <div class="category">{{item.category}}</div>
+      <div class="food-name">{{item.food_name}}</div>
+      <img class="menu-img" ng-src="{{item.image}}" alt="" />
+      <br>
+      <div class="description">{{item.description}}</div>
+      <div class="price">{{item.price | currency}}</div>
+      <br>
+      <input class="quantity" type="number" name="name" value="" ng-model="qty">
+      <button type="button" name="button" ng-click="addToCart(item.id, item.food_name, qty, item.price); getTotal(qty, item.price)">Add to Cart</button>
+      <hr>
+      <br>
+      <br>
+
+    </div>
+    <div class="order-form" >
+      <h1>Your Order</h1>
+      <table>
+        <tr>
+          <div class="table-row" ng-repeat="item in cartArr">
+
+          {{item.food_name}}, qty: {{item.qty}},
+          subtotal: {{item.qty * item.price | currency}}
+
+          <button type="button" name="button" ng-click="deleteItem(item)">X</button>
+          <br>
+        </div>
+        </tr>
+        <br>
+        Total: {{total_price | currency}}
+        <br>
+      </table>
+
+      <p>
+        We will text you once your order is ready.
+        <br>Est time: 15 - 30 min
+      </p>
+      <form name="contactForm">
+        Name:<br>
+        <input ng-model="customer.cust_name" class="form-field" type="text" name="name" required="required"><br>
+        Phone:<br>
+        <input ng-model="customer.phone_num" class="form-field" type="text" name="phone" required="required"><br>
+        Email:<br>
+        <input ng-model="customer.email" class="form-field" type="text" name="email"><br><br>
+         <button type="submit" ng-click="submitOrder(customer, cartArr); getOrderTableId(customer.phone_num); getTotal(qty, item.price)"  ui-sref="submitted">Submit</button> <!--MADE A CHANGE HERE ADDED FNCTION -->
+          <!--   -->
+
+        <br>
+        <br>
+
+      </form>
+
+    </div>
+
+  </div>
+
+<footer-dir class="footer-bottom"></footer-dir>

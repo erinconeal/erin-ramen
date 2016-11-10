@@ -1,0 +1,39 @@
+<header-dir></header-dir>
+
+<!-- <form name="newMenuItem" class=""> -->
+  <h1>New Menu Item Info</h1>
+Name:<input class="form-field" ng-model="food.food_name" type="text" name="name" value="" />
+<br>
+Description:<input class="form-field" ng-model="food.description"type="text" name="name" value="" /><br>
+Image:<input class="form-field" ng-model="food.image" type="text" name="name"><br>
+<!-- Category:<input class="form-field" ng-model="food.category"type="text" name="name" value="" /><br> -->
+Price:<input class="form-field" ng-model="food.price" type="number" name="name" value="" /><br><br>
+<input class="button" type="reset" name="name" value="Reset" />
+<button class="button" ng-click="addToMenu(food); getMenu()">SUBMIT</button>
+<!-- </form> -->
+
+<div class="">
+  <h1>Menu</h1>
+  <div ng-repeat="item in menu">
+    {{item.id}}
+    {{item.category}}
+    <br>
+    {{item.food_name}}
+    <img class="menu-img" ng-src="{{item.image}}" alt="" />
+    <br>
+    <h6>{{item.description}}</h6>
+    <h6>{{item.price}}</h6>
+    <br>
+    <button type="button" name="button"  ui-sref="editmenuitem({id: item.id})">Edit</button>
+    <button type="button" name="button" ng-click="delete(item.id)">Delete Item</button>
+    <hr>
+  </div>
+
+
+  <button type="button" name="button" ui-sref="logout">Logout</button>
+  <button type="button" name="button" ui-sref="admin">Admin Main</button>
+</div>
+<br>
+
+
+<footer-dir class="footer-bottom"></footer-dir>

@@ -1,0 +1,15 @@
+<header-dir></header-dir>
+<h1>Your Order has been submitted</h1>
+<p>
+  <!-- Your order id is: {{}} -->
+</p>
+<h2>Your Receipt:</h2>
+<div class="" ng-repeat="item in cart">
+  {{item.food_name}},
+  {{item.price | currency}},
+  Quantity: {{item.qty}}
+
+</div>
+<p>
+Total: {{getTotal() | currency}}
+</p>

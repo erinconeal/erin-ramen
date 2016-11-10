@@ -1,0 +1,228 @@
+/*font-family: 'Amaranth', sans-serif;
+font-family: 'Bungee Shade', cursive;
+font-family: 'Carter One', cursive;*/
+* {
+  font-family: 'Carter One', cursive;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  height: 15vh;
+  border-bottom: 5px ridge red;
+}
+
+.icon {
+  width: 15vw;
+  padding-top: 1vh;
+  padding-left: 1vw;
+  float: left;
+}
+
+.home {
+  font-size: 30px;
+}
+
+.title {
+  float: left;
+  padding: .5em;
+}
+
+.left-links {
+  float: left;
+}
+
+.order {
+  padding-left: 2vw;
+}
+
+.right-links {
+  float:right;
+  display:flex;
+  padding: 10px;
+}
+
+.link:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#map {
+  text-align: center;
+  width: 99%;
+}
+
+.home-pic-container {
+  position: relative;
+}
+
+.background {
+  width: 100%;
+  position: absolute;
+}
+
+.home-pic {
+  position: absolute;
+  left: 20vw;
+  z-index: 1;
+  top: 5vh;
+}
+
+.food-menu {
+  position: relative;
+  text-align: center;
+  top: 5vh;
+}
+
+.menu-img {
+  max-width: 99%;
+}
+
+.main-body {
+  margin-bottom: 60vh;
+  clear:both;
+  padding: 0 1vh 0 1vh;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 500px;
+}
+
+h6 {
+  font-family: Arial;
+}
+
+.footer-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+
+}
+
+.footer {
+  font-family: 'Carter One', cursive;
+  border-top: 3px ridge red;
+  padding: .5em 0 0 .3em;
+
+}
+
+.social-media {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+
+.admin {
+  text-align: center;
+  padding: .5em;
+}
+
+.button {
+  background: red;
+  border: none;
+  font-size: 3em;
+  padding: .2em;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.pickup-body {
+  text-align: center;
+  postion: relative;
+}
+
+
+.contact {
+  padding-left: 1em;
+}
+
+.submit, .register {
+  background: red;
+  border: none;
+  font-size: 1em;
+}
+
+.login {
+  font-size: 1em;
+  font-family: 'Carter One', cursive;
+  border-bottom: gray 1px;
+}
+
+button {
+  background: red;
+  font-size: 1em;
+  border: none;
+}
+
+.order-form {
+  position: relative;
+  margin-top: 69%;
+}
+
+.form-field {
+  border-bottom: 1px solid gray;
+}
+
+.quantity {
+  font-size: 1.1em;
+  text-align: center;
+  border: 1px solid gray;
+  display: inline-block;
+  margin-right: -2px;
+}
+
+
+@media screen and (min-width: 700px) {
+  .footer-bottom {
+    /*bottom: 0;
+    left: 0;*/
+    /*position: fixed;*/
+    width: 100%;
+    background: white;
+    height: 2em;
+  }
+
+  .footer {
+    font-family: 'Carter One', cursive;
+    border-top: solid red;
+    padding: 0;
+  }
+
+  .social-media {
+    float: right;
+    width: 4%;
+    padding: .2em;
+  }
+
+  .admin {
+    float: left;
+  }
+
+  .header {
+    height: 20vh;
+  }
+
+  .home-pic {
+    width: 50%;
+  }
+
+  .food-menu {
+    margin-top: 20em;
+  }
+
+  .menu-img {
+    float: left;
+    width: 50%;
+  }
+}

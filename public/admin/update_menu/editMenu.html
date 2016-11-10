@@ -1,0 +1,24 @@
+<header-dir></header-dir>
+
+<h1>Edit </h1>
+<br>
+<div class="edit-menu-item" ng-repeat="food in item">
+  Name:<input class="form-field" ng-model="food.food_name" type="text" name="name" />
+  <br>
+  Image:<input class="form-field" ng-model="food.image" type="text" name="name">
+  <br>
+
+  Description:<input class="form-field" ng-model="food.description"type="text" name="name" />
+  <br>
+
+  Price:<input class="form-field" ng-model="food.price" type="text" name="name"  />
+  <br>
+  <br>
+
+
+  <button class="button" type="button" name="button" ui-sref="updateMenu" ng-click="updateItem(food.id, food.food_name, food.image, food.description, food.price)">Send Changes</button>
+</div>
+
+
+<br>
+<footer-dir class="footer-bottom"></footer-dir>
