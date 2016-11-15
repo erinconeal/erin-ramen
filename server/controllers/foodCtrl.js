@@ -1,4 +1,4 @@
-var app = require('./index');
+var app = require('./../index');
 var db = app.get('db');
 
 module.exports = {
@@ -25,6 +25,12 @@ module.exports = {
         res.status(200).send(food);
       })
     })
+  },
+  
+  GetAllCategories: function(req, res, next) {
+    db.read_categories(function(err, categories) {
+      res.status(200).json(categories)
+    });
   },
 
   CreateCategory: function (req, res, next) {

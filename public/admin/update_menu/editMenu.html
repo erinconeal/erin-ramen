@@ -1,24 +1,25 @@
 <header-dir></header-dir>
-
-<h1>Edit </h1>
-<br>
-<div class="edit-menu-item" ng-repeat="food in item">
-  Name:<input class="form-field" ng-model="food.food_name" type="text" name="name" />
+<div class="blue-background">
+  <h1>Edit </h1>
   <br>
-  Image:<input class="form-field" ng-model="food.image" type="text" name="name">
-  <br>
+  <div class="edit-menu-item" ng-repeat="food in item">
+    Name:<input class="form-field" ng-model="food.food_name" type="text" name="name" />
+    <br>
+    Image:<input class="form-field" ng-model="food.image" type="text" name="name">
+    <br>
+    Category:<select class="form-field" ng-model="food.food_cat_id[0]" type="text" name="category" ng-options="section.category for section in categories track by section.id"></select><br>
+    Description:<input class="form-field" ng-model="food.description"type="text" name="name" />
+    <br>
+    Price:<input class="form-field" ng-model="food.price" type="text" name="name"  />
+    <br>
+    <br>
 
-  Description:<input class="form-field" ng-model="food.description"type="text" name="name" />
-  <br>
 
-  Price:<input class="form-field" ng-model="food.price" type="text" name="name"  />
-  <br>
-  <br>
+    <button class="button" type="button" name="button" ui-sref="updateMenu" ng-click="updateItem(food.id, food.food_name, food.image, food.food_cat_id, food.description, food.price)">Send Changes</button>
+  </div>
 
 
-  <button class="button" type="button" name="button" ui-sref="updateMenu" ng-click="updateItem(food.id, food.food_name, food.image, food.description, food.price)">Send Changes</button>
+  <br>
 </div>
 
-
-<br>
 <footer-dir class="footer-bottom"></footer-dir>

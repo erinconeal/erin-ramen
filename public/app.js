@@ -46,7 +46,12 @@ angular.module('myApp', ['ui.router'])
   .state('submitted', {
     templateUrl: '/order/submitted/submit.html',
     controller: 'submitCtrl',
-    url: '/submitted'
+    url: '/submitted',
+    resolve: {
+      orders: function(mainService) {
+        return mainService.getCustOrder();
+      }
+    }
   })
   .state('login', {
     templateUrl: '/admin/login/admin_login.html',
@@ -93,6 +98,9 @@ angular.module('myApp', ['ui.router'])
     resolve: {
       food: function(mainService){
         return mainService.getMenu();
+      },
+      categories: function(mainService) {
+        return mainService.GetAllCategories();
       }
     }
   })
@@ -103,6 +111,9 @@ angular.module('myApp', ['ui.router'])
     resolve: {
       item: function(mainService, $stateParams) {
         return mainService.getOneMenuItem($stateParams.id)
+      },
+      categories: function(mainService) {
+        return mainService.GetAllCategories();
       }
     }
   })

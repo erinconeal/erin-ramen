@@ -135,13 +135,13 @@ h6 {
   text-align: center;
   margin: 0 auto;
   display: block;
+  border-radius: .3em;
 }
 
 .pickup-body {
   text-align: center;
   postion: relative;
 }
-
 
 .contact {
   padding-left: 1em;
@@ -163,6 +163,7 @@ button {
   background: red;
   font-size: 1em;
   border: none;
+  border-radius: .3em;
 }
 
 .order-form {

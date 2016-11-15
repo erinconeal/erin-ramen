@@ -1,27 +1,47 @@
-<header-dir></header-dir>
+<!-- <header-dir></header-dir> -->
 
 <!-- <div class="home-pic-container">
   <img class="background" src="images/superthumb.jpg" alt="" />
   <img class="home-pic" src="images/img_menu_other03.png" alt="" />
 </div> -->
+<div class="container">
+  <div class="landing">
+    <div class="landing-title">Erin's Ramen</div>
+    <br>
+    <div class="landing-logo"></div>
+    <div class="landing-links center">
+      <ul>
+        <li><div class="contact link" ui-sref="contact">Contact |</div></li>
+        <li><div class="order link" ui-sref="order">Order</div></li>
+      </ul>
+    </div>
+    <a href="#anchor" class="center flex-bottom">
+      <!-- <div class="menu-link">Menu</div>
+      <div class="myButton"></div> -->
+    </a>
+  </div>
 
 
-  <div class="main-body">
+  <div id="anchor" class="main-body">
     <br>
     <h1>Menu</h1>
     <div class="food-menu" ng-repeat="item in food">
-      {{item.category}}
-    <h2>{{item.food_name}}</h2>
-    <img class="menu-img" ng-src="{{item.image}}" alt="" />
-    <br>
-    <h6>{{item.description}}</h6>
-    <h6>{{item.price}}</h6>
-    <br>
+      <br>
+      <h2>{{item.food_name}}</h2><br>
+      <img class="menu-img" ng-src="{{item.image}}" alt="" />
+      <br>
+      <h6>{{item.description}}</h6>
+      <h6>{{item.price | currency}}</h6>
+      <br>
     </div>
+
+<!--  -->
+<div class="lasthope">
+  <footer-dir class="footer-bottom"></footer-dir>
+</div>
   </div>
 
 
 
 
-
-<footer-dir class="footer-bottom"></footer-dir>
+</div>

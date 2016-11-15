@@ -1,19 +1,24 @@
-<header-dir></header-dir>
-<div class="main-body">
-  <form>
-    <br>
-    Username: <input class="login" type="username" ng-model="user.username" required/>
-    <br>
-    <br>
-    Password: <input class="login" type="password" ng-model="user.password" required/>
-    <br>
-    <br>
-    <button class="submit" type="submit" ng-click="login(user)">Login</button>
-    <button class="register" type="register" ng-click="register(user)">Register (new user)</button>
-  </form>
+
+<div class="blue-background container">
+  <header-dir></header-dir>
+
+  <div class="main-body">
+    <form>
+      <br>
+      Username: <input class="login" type="username" ng-model="user.username" required/>
+      <br>
+      <br>
+      Password: <input class="login" type="password" ng-model="user.password" required/>
+      <br>
+      <br>
+      <button class="submit" type="submit" ng-click="login(user)">Login</button>
+      <button class="register" type="register" ng-click="register(user)">Register (new user)</button>
+    </form>
+  </div>
+
+
+  <div class="lasthope" id="login-footer">
+    <footer-dir class="footer-bottom"></footer-dir>
+  </div>
+
 </div>
-
-
-
-
-<footer-dir class="footer-bottom"></footer-dir>

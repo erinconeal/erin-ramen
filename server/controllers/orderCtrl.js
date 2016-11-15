@@ -1,4 +1,4 @@
-var app = require('./index');
+var app = require('./../index');
 var db = app.get('db');
 
 module.exports = {
@@ -59,8 +59,30 @@ module.exports = {
 	},
 	getUncompletedOrders: function(req, res, next) {
 		db.read_all_uncompleted_orders(function(err, orders) {
-			res.status(200).json(orders)
+
+			async(0);
+
+			function async(i) {
+			  if (i >= orders.length) {
+			  	return fin()
+			  }
+
+				db.read_order_food([orders[i].cart], function (err, cart) {
+				  orders[i].cart = cart;
+					async(i + 1)
+				})
+			}
+
+			function fin() {
+				res.status(200).json(orders);
+			}
+
 		});
+	},
+	deleteOrder: function(req, res, next) {
+		db.delete_order([req.params.id], function(err, order) {
+      res.status(200).json(order)
+    })
 	},
 	//ALEX MADE CHANGES
 	getOrderTableId: function(req,res,next){

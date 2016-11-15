@@ -11,16 +11,17 @@ var massiveServer = massive.connectSync({
 var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use('/dist', express.static(__dirname + './../dist'));
 app.use(express.static(__dirname + './../public'));
 
 app.set('db', massiveServer);
 var db = app.get('db');
-// console.log(db);
-var foodCtrl = require('./foodCtrl');
+
 var passport = require('./passport');
-var UserCtrl = require('./userCtrl');
-var orderCtrl = require('./orderCtrl');
-var productCtrl = require('./productCtrl');
+var foodCtrl = require('./controllers/foodCtrl');
+var UserCtrl = require('./controllers/userCtrl');
+var orderCtrl = require('./controllers/orderCtrl');
+var productCtrl = require('./controllers/productCtrl');
 var serverConfig = require('./server_config')
 
 var isAuthed = function(req, res, next) {
@@ -71,12 +72,14 @@ app.post('/api/order/:userid', orderCtrl.createOrder);
 // app.put('/api/order/complete/:orderid/:userid', orderCtrl.completeOrder, orderCtrl.createOrder);
 app.get('/api/order/:userid', orderCtrl.getUserOrder);
 app.get('/orderstofill', orderCtrl.getUncompletedOrders);
+app.delete('/deleteorder/:id', orderCtrl.deleteOrder)
 //ALEX COMMMENTED THIS OUT
 // app.get('/api/order/completed/:userid', orderCtrl.getUserHistory);
 //ALEX MADE CHANGES//
 app.get('/get/order/:phone_num', orderCtrl.getOrderTableId);
 
 // CHANGE MENU //
+app.get('/categories', foodCtrl.GetAllCategories);
 app.post('/addfood', foodCtrl.CreateFood);
 app.post('/addcategory', foodCtrl.CreateCategory);
 app.put('/update/:id', foodCtrl.Update);

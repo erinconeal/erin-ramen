@@ -2,7 +2,6 @@ angular.module('myApp')
 .service('adminSrv', function($http) {
 
   this.addFood = function(food) {
-    console.log("SRVC");
     return $http({
       method: 'POST',
       url: '/addfood',
@@ -24,13 +23,14 @@ angular.module('myApp')
     });
   };
 
-  this.updateFood = function(id, food_name, image, description, price) {
+  this.updateFood = function(id, food_name, image, food_cat_id, description, price) {
     return $http({
       method: 'PUT',
       url: '/update/' + id,
       data: {
         food_name: food_name,
         image: image,
+        food_cat_id: food_cat_id,
         description: description,
         price: price
       }
@@ -55,5 +55,12 @@ angular.module('myApp')
     .then(function(response) {
       return response.data;
     })
+  };
+
+  this.removeOrder = function(id) {
+    return $http({
+      method: 'DELETE',
+      url: '/deleteorder/' + id
+    });
   };
 });

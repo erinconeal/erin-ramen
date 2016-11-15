@@ -12,9 +12,14 @@ angular.module('myApp')
     })
   }();
 
+  $scope.getCategories = function() {
+    mainService.GetAllCategories()
+    .then(function(response) {
+      $scope.categories = response
+    })
+  }();
 
   $scope.delete = function(id) {
-    console.log(id);
     adminSrv.deleteFood(id)
     .then(function(response) {
       $scope.getMenu();
@@ -30,7 +35,7 @@ angular.module('myApp')
     }
   }, 500);
 
-  
+
   // $scope.update = adminSrv.updateFood();
 
 });

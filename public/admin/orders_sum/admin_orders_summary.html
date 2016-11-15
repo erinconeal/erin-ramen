@@ -1,10 +1,20 @@
 <header-dir></header-dir>
-<h1>Unfilled Orders</h1>
-<div class="" ng-repeat="order in orders">
-  Customer ID: {{order.cust_id}}<br>
-  Items: {{order.cart}}<br>
-  Complete? {{order.complete}}<br>
-  <hr>
+
+<div class="main-body blue-background">
+  <h1>Unfilled Orders</h1>
+  <br>
+  <div ng-repeat="order in orders">
+    Order ID: {{order.id}}<br>
+    <br>
+    Items:<br> <span ng-repeat="item in order.cart">{{item.food_name}}<br></span>
+    <br>
+    <button type="button" name="button" ng-click="deleteOrder(order.id)">Order Complete</button>
+    <br>
+    <hr>
+  </div>
 </div>
 
-<footer-dir class="footer-bottom"></footer-dir>
+
+<div class="lasthope" id="admin-orders-summary-footer">
+  <footer-dir class="footer-bottom"></footer-dir>
+</div>

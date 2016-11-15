@@ -1,15 +1,21 @@
 <header-dir></header-dir>
-<h1>Your Order has been submitted</h1>
-<p>
-  <!-- Your order id is: {{}} -->
-</p>
-<h2>Your Receipt:</h2>
-<div class="" ng-repeat="item in cart">
-  {{item.food_name}},
-  {{item.price | currency}},
-  Quantity: {{item.qty}}
-
+<div class="main-body">
+  <h1>Your Order has been submitted</h1>
+  <div ng-repeat="order in orders">
+    Order ID: {{order.id}}<br>
+  </div>
+  <h2>Your Receipt:</h2>
+  <div class="" ng-repeat="item in cart">
+    {{item.food_name}},
+    {{item.price | currency}},
+    Quantity: {{item.qty}}
+  </div>
+  <div class="large-text">
+  Total: {{getTotal() | currency}}
+  </div>
 </div>
-<p>
-Total: {{getTotal() | currency}}
-</p>
+
+
+<div class="lasthope" id="admin-main-footer">
+  <footer-dir class="footer-bottom"></footer-dir>
+</div>

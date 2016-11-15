@@ -21,6 +21,16 @@ angular.module('myApp')
 		});
   };
 
+  this.GetAllCategories = function() {
+    return $http({
+      method: 'GET',
+      url: '/categories'
+    })
+    .then(function(response) {
+      return response.data;
+    })
+  };
+
   this.createCustomer = function(customer) {
     console.log("customer obj? ", customer);
     return $http({

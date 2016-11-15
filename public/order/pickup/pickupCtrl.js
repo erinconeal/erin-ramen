@@ -31,7 +31,6 @@ angular.module('myApp')
 
   $scope.submitOrder = function(customer, cartArr) { //order_id, qty
     console.log("customer " + customer.phone_num);
-    console.log("cartArr " + cartArr);
 
     var cart = [];
     for (var i = 0; i < cartArr.length; i++) {
@@ -39,9 +38,11 @@ angular.module('myApp')
     }
     console.log(cart);
     // mainService.addToCart(cartArr, order_id, qty)
-    mainService.createCustomer(customer).then(function(response){
+    mainService.createCustomer(customer)
+    .then(function(response){
       console.log("Your customer id is ", response.data.id);
-      mainService.placeOrder(cart, response.data.id).then(function(response) {
+      mainService.placeOrder(cart, response.data.id)
+      .then(function(response) {
         console.log(cart);
           console.log("Your order id is ", response.data.id);
         });

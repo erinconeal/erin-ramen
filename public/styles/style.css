@@ -1,0 +1,256 @@
+* {
+  font-family: Arial, Verdana, sans-serif; }
+
+html {
+  height: 100%;
+  margin: 0; }
+  html body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column; }
+
+.landing {
+  width: 100vw;
+  height: 100vh;
+  background: #ff5959;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+
+.landing-title {
+  text-transform: capitalize; }
+
+.landing-logo {
+  width: 50px;
+  height: 50px;
+  background-image: url("images/ramen-icon.png") no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2; }
+
+.landing-links ul li {
+  display: inline-block; }
+
+.menu-link {
+  z-index: 1;
+  text-align: center;
+  bottom: 0; }
+
+.myButton {
+  background-image: url("images/arrow-button.png") no-repeat;
+  background-size: cover;
+  margin: 10px auto;
+  position: relative;
+  transform: rotate(180deg); }
+
+.flex-bottom {
+  align-self: flex-end; }
+
+#anchor {
+  height: 100vh; }
+
+.center {
+  text-align: center; }
+
+.header {
+  width: 100%;
+  height: 15vh;
+  border-bottom: 5px ridge #ff5959; }
+  @media screen and (min-width: 700px) {
+    .header {
+      height: 20vh; } }
+
+.icon {
+  width: 15vw;
+  padding-top: 1vh;
+  padding-left: 1vw;
+  float: left; }
+  @media screen and (min-width: 700px) {
+    .icon {
+      width: 12vw; } }
+
+.home {
+  font-size: 30px; }
+
+.title {
+  float: left;
+  padding: .5em; }
+
+.left-links {
+  float: left; }
+
+.order {
+  padding-left: 2vw; }
+
+.right-links {
+  float: right;
+  display: flex;
+  padding: 10px; }
+
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer; }
+
+#map {
+  text-align: center;
+  width: 99%auto; }
+
+.home-pic-container {
+  position: relative; }
+
+.background {
+  width: 100%;
+  position: absolute; }
+
+.home-pic {
+  position: absolute;
+  left: 20vw;
+  z-index: 1;
+  top: 5vh; }
+  @media screen and (min-width: 700px) {
+    .home-pic {
+      width: 50%; } }
+
+.food-menu {
+  position: relative;
+  text-align: center;
+  top: 5vh; }
+  @media screen and (min-width: 700px) {
+    .food-menu {
+      margin: 5em;
+      border: 1px solid gray;
+      padding: 0 1em 0 1em; } }
+
+.menu-img {
+  max-width: 99%; }
+  @media screen and (min-width: 700px) {
+    .menu-img {
+      width: 15vw;
+      text-align: center; } }
+
+.main-body {
+  clear: both;
+  padding: 0 1vh 0 1vh;
+  flex: 1; }
+
+h1 {
+  text-align: center;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 500px; }
+
+h6 {
+  font-family: Arial; }
+
+.large-text {
+  font-size: 1em; }
+
+.container {
+  position: relative;
+  height: 100vh; }
+
+.footer-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: absolute; }
+  @media screen and (min-width: 700px) {
+    .footer-bottom {
+      height: 2em; } }
+
+.footer {
+  border-top: 3px ridge #ff5959;
+  padding: .5em .3em 0 .3em;
+  margin: 0;
+  position: relative;
+  bottom: 0; }
+  @media screen and (min-width: 700px) {
+    .footer {
+      border-top: solid #ff5959;
+      padding: 0; } }
+
+#login-footer {
+  position: static; }
+
+#admin-main-footer {
+  position: static; }
+
+.lasthope {
+  width: 100%;
+  height: 165px;
+  position: relative; }
+
+.social-media {
+  display: inline-block;
+  width: 24%;
+  text-align: center; }
+  @media screen and (min-width: 700px) {
+    .social-media {
+      float: right;
+      width: 4%;
+      padding: .2em; } }
+
+.admin {
+  padding: .5em;
+  width: 100%;
+  vertical-align: middle; }
+  .admin ul {
+    text-align: center; }
+    .admin ul li {
+      display: inline-block; }
+  @media screen and (min-width: 700px) {
+    .admin {
+      float: left; } }
+
+.button {
+  background: #ff5959;
+  border: none;
+  font-size: 3em;
+  padding: .2em;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  color: white; }
+
+.pickup-body {
+  text-align: center;
+  position: relative; }
+
+.contact {
+  padding-left: 1em;
+  min-height: 100%;
+  margin-bottom: -1em; }
+
+.submit .register {
+  background: #ff5959;
+  border: none;
+  font-size: 1em; }
+
+.login {
+  font-size: 1em;
+  border-bottom: gray 1px; }
+
+button {
+  background: #ff5959;
+  font-size: 1em;
+  border: none;
+  color: white; }
+
+.order-form {
+  position: relative;
+  margin-top: 69%; }
+
+.form-field {
+  border-bottom: 1px solid gray; }
+
+.quantity {
+  font-size: 1.1em;
+  text-align: center;
+  border: 1px solid gray;
+  display: inline-block;
+  margin-right: -2px; }
