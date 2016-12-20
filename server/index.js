@@ -23,7 +23,6 @@ var foodCtrl = require('./controllers/foodCtrl');
 var UserCtrl = require('./controllers/userCtrl');
 var orderCtrl = require('./controllers/orderCtrl');
 var productCtrl = require('./controllers/productCtrl');
-var serverConfig = require('./server_config')
 
 var isAuthed = function(req, res, next) {
 	if (!req.isAuthenticated()) return res.status(401)
