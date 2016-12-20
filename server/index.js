@@ -3,11 +3,12 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var massive = require('massive');
 var session = require('express-session');
+const config = require('./server_config');
 
-
+var massiveUri = config.MASSIVE_URI;
 var massiveServer = massive.connectSync({
-  connectionString: 'postgres://postgres:postgres@localhost/ramen'
-});
+  connectionString: massiveUri
+})
 var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -32,9 +33,9 @@ var isAuthed = function(req, res, next) {
 
 // Session and passport //
 app.use(session({
-	secret: 'fjdal;fdsa',
-	saveUninitialized: false,
-	resave: false
+  secret: config.SESSION_SECRET,
+  saveUninitialized: true,
+  resave: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());

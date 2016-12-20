@@ -1,14 +1,16 @@
 create table products_in_cart
   (
     id serial primary key,
-    qty integer,
     order_id integer references orders,
-    food_id integer references food
+    food_id integer references food,
+    qty integer,
+    subtotal decimal(10,2)
   );
 
 create table orders
   (
     id serial primary key,
+    order_date timestamp,
     complete boolean,
     cust_id integer references customers
   );
@@ -20,8 +22,8 @@ create table food
     description text,
     price decimal(10, 2),
     image text,
-    user_id integer references users,
-    food_cat_id integer references food_category
+    food_cat_id integer references food_category,
+    user_id integer references users
   );
 
 create table food_category
@@ -29,21 +31,37 @@ create table food_category
     id serial primary key,
     category text
   );
+
+create table customers
+  (
+    id serial primary key,
+    name text,
+    phone text,
+    email text
+  );
+
+create table users
+  (
+    id serial primary key,
+    username varchar(50),
+    password varchar(50)
+  );
+
 insert into food_category
   (category)
-  values ('Appetizers')
+  values ('Appetizers');
 insert into food_category
   (category)
-  values ('Drinks')
+  values ('Drinks');
 insert into food_category
   (category)
-  values ('Ramen')
+  values ('Ramen');
 insert into food_category
   (category)
-  values ('Rice')
+  values ('Rice');
 insert into food_category
   (category)
-  values ('Sides')
+  values ('Sides');
 
 
 insert into food
@@ -51,7 +69,7 @@ insert into food
 values ('Edamame', 'Fresh soybeans in the pod. A popular snack in Japan!', 2.50, 'https://s3-us-west-2.amazonaws.com/devmtn-personal-proj/images/apps/edamame.jpg', 1, 1);
 insert into food
 (food_name, description, price, image, user_id, food_cat_id)
-values ('Seaweed Salad', '', 3.45, 'https://s3-us-west-2.amazonaws.com/devmtn-personal-proj/images/apps/seaweed-salad.jpg' 1, 1);
+values ('Seaweed Salad', '', 3.45, 'https://s3-us-west-2.amazonaws.com/devmtn-personal-proj/images/apps/seaweed-salad.jpg', 1, 1);
 insert into food
 (food_name, description, price, image, user_id, food_cat_id)
 values ('Gyoza', 'Japanese fried dumplings stuffed with ground pork', 4.45, 'https://s3-us-west-2.amazonaws.com/devmtn-personal-proj/images/apps/gyoza.jpg', 1, 1);
