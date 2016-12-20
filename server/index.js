@@ -85,7 +85,7 @@ app.post('/addcategory', foodCtrl.CreateCategory);
 app.put('/update/:id', foodCtrl.Update);
 app.delete('/deletefood/:id', foodCtrl.Delete);
 
-var port = serverConfig.serverPort;
+var port = config.serverPort;
 app.listen(port, function() {
   console.log('Server up on port', port);
 })
