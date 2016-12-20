@@ -5,16 +5,17 @@ var massive = require('massive');
 var session = require('express-session');
 const config = require('./server_config');
 
-var massiveUri = config.MASSIVE_URI;
-var massiveServer = massive.connectSync({
-  connectionString: massiveUri
-})
 var app = module.exports = express();
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/dist', express.static(__dirname + './../dist'));
 app.use(express.static(__dirname + './../public'));
 
+var massiveUri = config.MASSIVE_URI;
+var massiveServer = massive.connectSync({
+  connectionString: massiveUri
+})
 app.set('db', massiveServer);
 var db = app.get('db');
 
